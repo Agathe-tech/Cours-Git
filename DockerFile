@@ -1,0 +1,12 @@
+# On part d'une image Python légère
+FROM python:3.11-slim
+
+# On définit le dossier de travail à l'intérieur du container
+WORKDIR /app
+
+# On copie le script et le fichier d'entrée dans le container
+COPY calculateur.py .
+COPY entrée.txt .
+
+# Commande lancée au démarrage du container
+CMD ["python", "calculateur.py"]
